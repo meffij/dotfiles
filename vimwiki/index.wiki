@@ -1,0 +1,20 @@
+Notes
+
+[[General Vim Stuff]]
+
+[[.vimrc stuff]]
+
+[[Vim Wiki Stuff]]
+
+[[Vim-Path Stuff]]
+
+[[PowerShell stuff]]
+
+[[Marth is the best character in the game]]
+
+= To-Do List =
+set up VM on flash drive
+maybe set up syncing flash drive to laptop
+set up git repo for dotfiles and vim-wiki
+Implement overloading in Typescript
+implement Codex in TS (lol)

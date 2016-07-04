@@ -1,0 +1,7 @@
+= Vim-Wiki Stuff =
+\ww brings up index
+\wi brings up diary index
+\w\w brings up today's diary
+\w\i redoes diary index
+<CR> linkifies stuff
+<C-SPACE> checks checkboxes

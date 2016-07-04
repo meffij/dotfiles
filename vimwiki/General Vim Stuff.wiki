@@ -1,0 +1,36 @@
+= COOL STUFF =
+:shell starts a whole shell
+:suspend drops you back to the shell you launched vim from, fg takes you back
+
+= BUFFERS =
+:ls lists all buffers (see :help :ls)
+:[N] b or :b [N] opens buffer number N in current window
+:[N]bd deletes buffers
+
+= SESSIONS =
+:mks [file] writes vim script to restore session. [file] default is Session.vim
+vim -S [file] restores session
+seems like sometimes the highlighting from the last search is preserved
+
+= MULTIPLE CURSORS =
+is not a thing in vim, use visual block select, find-change -> gn-change -> . to
+  do the same thing to multiple selections
+  
+= MACROS =
+start by pressing q, then a register { a - z }
+stop by pressing q in normal mode
+execute by pressing @{ a - z }
+
+
+= WINDOW NAVIGATION =
+CTRL-W controls windows
+CTRL-W w or CTRL-W CTRL-W switches windows
+CTRL-W plus direction moves that direction
+CTRL-W = makes windows equal size
+CTRL-b moves to last window
+
+= FILE NAVIGATION =
+:sp[lit] [file] splits horizontally
+:vs [file] splits vertically
+CTRL-O takes you back
+CTRL-I is the counterpart to CTRL-O

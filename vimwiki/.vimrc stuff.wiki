@@ -1,0 +1,6 @@
+vim-plug is managing plugins, but startup time is really slow
+much quicker on laptop, not sure why
+not too bad on work pc any more
+some lag though
+swapped ; and :
+visual swapped with visual block
