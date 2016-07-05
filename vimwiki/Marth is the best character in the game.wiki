@@ -3,6 +3,7 @@ He wins every matchup
 [[TOME]]
 
 = General =
+[[Frame Data]]
 
 = Movement =
 == General ==
