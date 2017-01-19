@@ -26,6 +26,8 @@ Plug 'tpope/vim-surround', { 'for': [ 'js', 'cpp', 'hpp', 'html', 'xml' ] }
 
 Plug 'pprovost/vim-ps1'
 
+Plug 'rust-lang/rust.vim'
+
 "Plug 'valloric/youcompleteme'
 
 call plug#end()
