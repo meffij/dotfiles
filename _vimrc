@@ -2,6 +2,7 @@ set backspace=indent,eol,start
 set autoindent
 set complete-=i
 set smarttab
+set expandtab
 
 set nrformats-=octal
 set notimeout
@@ -28,7 +29,15 @@ Plug 'pprovost/vim-ps1'
 
 Plug 'rust-lang/rust.vim'
 
-"Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme'
+
+Plug 'JamshedVesuna/vim-markdown-preview'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'tpope/vim-dispatch'
+
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -57,15 +66,18 @@ nnoremap : ;
 nnoremap ; :
 
 "set hlsearch
+
+" Makes cursor work correctly
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
 nnoremap <BS> :noh<return>
 set nomodeline
 nnoremap Y y$
 
-packadd! matchit
+" packadd! matchit
 
 set ignorecase
 set smartcase
@@ -73,3 +85,20 @@ set nostartofline
 set confirm
 set visualbell
 set hidden
+
+" highlight OverLength ctermbg=red guibg=#592929
+" match OverLength /\%81v.\+/
+let &colorcolumn=join(range(81,999),",")
+
+command! JJ !cargo test
+command! GTD :YcmCompleter GoToDefinition
+command! GTDef :YcmCompleter GoToDeclaration
+command! Tup !tup
+command! TUP !tup
+
+nnoremap <C-T> :!tup<CR>
+
+let mapleader = " "
+
+" vimwiki configure
+" let g:vimwiki_list
