@@ -23,7 +23,7 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-Plug 'tpope/vim-surround', { 'for': [ 'js', 'cpp', 'hpp', 'html', 'xml' ] }
+Plug 'tpope/vim-surround', { 'for': [ 'js', 'ts', 'tsx', 'c', 'h', 'cpp', 'hpp', 'html', 'xml' ] }
 
 Plug 'pprovost/vim-ps1'
 
@@ -38,6 +38,10 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-dispatch'
 
 Plug 'tpope/vim-fugitive'
+
+Plug 'leafgarland/typescript-vim'
+
+Plug 'alunny/pegjs-vim'
 
 call plug#end()
 
@@ -96,9 +100,13 @@ command! GTDef :YcmCompleter GoToDeclaration
 command! Tup !tup
 command! TUP !tup
 
-nnoremap <C-T> :!tup<CR>
+nnoremap <C-T> :w<CR>:!tup<CR>
+nnoremap <C-G> :YcmCompleter GoTo<CR>
 
 let mapleader = " "
 
 " vimwiki configure
 " let g:vimwiki_list
+
+set ssop-=options  " do not store global and local variables in a session
+set ssop-=folds    " do not store folds

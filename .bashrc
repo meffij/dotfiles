@@ -132,3 +132,6 @@ alias vimbashrc='vim ~/.bashrc'
 alias vimtmuxconf='vim ~/.tmux.conf'
 alias vimrc='vim -p ~/.vimrc ~/.bashrc ~/.tmux.conf'
 alias weather='curl wttr.in/Berkeley,CA'
+# alias node='nodejs'
+
+# source ~/emscripten/emsdk_portable/emsdk_env.sh
