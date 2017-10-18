@@ -17,11 +17,23 @@ endif
 
 call plug#begin()
 
-Plug 'vimwiki'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'vim-syntastic/syntastic'
+
+Plug 'vim-scripts/paredit.vim'
+
+Plug 'guns/vim-clojure-static'
+
+Plug 'luochen1990/rainbow'
+
+Plug 'tpope/vim-fireplace'
+
+Plug 'vimwiki/vimwiki'
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-surround', { 'for': [ 'js', 'ts', 'tsx', 'c', 'h', 'cpp', 'hpp', 'html', 'xml' ] }
 
@@ -72,10 +84,10 @@ nnoremap ; :
 "set hlsearch
 
 " Makes cursor work correctly
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+" let &t_ti.="\e[1 q"
+" let &t_SI.="\e[5 q"
+" let &t_EI.="\e[1 q"
+" let &t_te.="\e[0 q"
 
 nnoremap <BS> :noh<return>
 set nomodeline
@@ -92,7 +104,7 @@ set hidden
 
 " highlight OverLength ctermbg=red guibg=#592929
 " match OverLength /\%81v.\+/
-let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn=join(range(81,999),",")
 
 command! JJ !cargo test
 command! GTD :YcmCompleter GoToDefinition
@@ -100,13 +112,59 @@ command! GTDef :YcmCompleter GoToDeclaration
 command! Tup !tup
 command! TUP !tup
 
+let mapleader = " "
+
 nnoremap <C-T> :w<CR>:!tup<CR>
 nnoremap <C-G> :YcmCompleter GoTo<CR>
-
-let mapleader = " "
+nnoremap <leader>nt :NERDTreeToggle<CR>
 
 " vimwiki configure
 " let g:vimwiki_list
 
 set ssop-=options  " do not store global and local variables in a session
 set ssop-=folds    " do not store folds
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_args='-c ~/repos/lint/.eslintrc'
+let g:syntastic_quiet_messages = { "regex": 'max-len' }
+
+" if has("clipboard")
+"     set clipboard=unnamed " copy to the system clipboard
+
+    " if has("unnamedplus") " X11 support
+    "     set clipboard+=unnamedplus
+    " endif
+" endif
+
+let g:rainbow_conf = {
+\	'guifgs': ['red', 'green', 'lightgreen', 'lightmagenta'],
+\	'ctermfgs': ['red', 'lightblue', 'magenta', 'lightgreen', 'lightmagenta'],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	'separately': {
+\		'*': {},
+\		'tex': {
+\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\		},
+\		'lisp': {
+\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\		},
+\		'vim': {
+\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\		},
+\		'html': {
+\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\		},
+\		'css': 0,
+\	}
+\}
+let g:rainbow_active = 1
