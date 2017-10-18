@@ -74,8 +74,8 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -120,18 +120,30 @@ if [ "$TERM" != "dumb" ]; then
 	[ -e "$HOME/.dir_colors" ] &&
 		DIR_COLORS="$HOME/.dir_colors" [ -e "$DIR_COLORS" ] ||
 		DIR_COLORS=""
-	eval "`dircolors -b $DIR_COLORS`"
-	alias ls='ls --color=auto'
+	#eval "`dircolors -b $DIR_COLORS`"
+	#alias ls='ls --color=auto'
 fi
 
 alias python='python3'
 
 export TERM=screen-256color
-eval `dircolors ~/.dir_colors`
+# eval `dircolors ~/.dir_colors`
 alias vimbashrc='vim ~/.bashrc'
 alias vimtmuxconf='vim ~/.tmux.conf'
 alias vimrc='vim -p ~/.vimrc ~/.bashrc ~/.tmux.conf'
 alias weather='curl wttr.in/Berkeley,CA'
 # alias node='nodejs'
+alias ll='ls -l'
 
 # source ~/emscripten/emsdk_portable/emsdk_env.sh
+
+# colors in osx
+export CLICOLOR=1
+
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+include ~/.bash_ssh
+include ~/.bash_logdnalogins
+eval $(thefuck --alias)
