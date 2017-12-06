@@ -1,0 +1,28 @@
+https://gist.github.com/MohamedAlaa/2961058
+
+copy-paste:
+enter buffer mode (i use c-u)
+paste with c-b ]
+
+start new with session name:
+tmux new -s myname
+
+attach:
+tmux a #
+
+attach to named:
+tmux a -t myname
+
+list sessions:
+tmux ls
+
+kill session:
+tmux kill-session -t myname
+
+kill all sessions:
+tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+
+= Sessions =
+:new
+s list sessions
+$ name session

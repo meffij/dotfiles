@@ -1,3 +1,6 @@
+[[StackOverflow cheat sheet]]
+
+
 = COOL STUFF =
 :shell starts a whole shell
 :suspend drops you back to the shell you launched vim from, fg takes you back
@@ -6,6 +9,7 @@
 :ls lists all buffers (see :help :ls)
 :[N] b or :b [N] opens buffer number N in current window
 :[N]bd deletes buffers
+	this should be unnecessary most of the time except to reduce clutter and free memory
 
 = SESSIONS =
 :mks [file] writes vim script to restore session. [file] default is Session.vim

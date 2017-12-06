@@ -1,0 +1,8 @@
+:mksession [path] makes session
+:mks for short
+:mks with no parameter creates a file Session.vim at current path
+
+to open session:
+:source [session path]
+vim -S [session path]
+vim -S with no param opens Session.vim
