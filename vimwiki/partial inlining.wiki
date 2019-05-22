@@ -1,0 +1,9 @@
+partial inlining
+break functions down by basic block, inline only the ones expected to be hot
+this is probably how tracing jits already work in effect
+ex: small size optimized strings, if all strings are small, outline all code to handle heap-allocated strings
+'deoptimization' in an aot system just means outlining / code size optimization
+branch prediction / profiling based code organization
+this optimization must be cognizant of icache properties
+
+binding-equivalent forms is a formal way of defining the odr exception found in c++

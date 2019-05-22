@@ -1,3 +1,8 @@
+" toggle line numbers off
+" set nornu, set nonumber
+" turn them back on
+" set rnu, set number
+
 set backspace=indent,eol,start
 set autoindent
 set complete-=i
@@ -54,6 +59,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'alunny/pegjs-vim'
+
+Plug 'tpope/vim-obsession'
 
 call plug#end()
 
@@ -114,7 +121,7 @@ command! TUP !tup
 
 let mapleader = " "
 
-nnoremap <C-T> :w<CR>:!tup<CR>
+nnoremap <leader>tup :w<CR>:!tup<CR>
 nnoremap <C-G> :YcmCompleter GoTo<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 
@@ -168,3 +175,5 @@ let g:rainbow_conf = {
 \	}
 \}
 let g:rainbow_active = 1
+
+let g:syntastic_mode_map = { "mode": "passive" }

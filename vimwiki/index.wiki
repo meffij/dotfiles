@@ -1,5 +1,3 @@
-[[Notes]]
-
 [[General Vim Stuff]]
 
 [[vim sessions]]
@@ -13,5 +11,9 @@
 [[Vim-Path Stuff]]
 
 [[PowerShell stuff]]
+
+russkaya -- tractor tractor
+
+[[partial inlining]]
 
 = To-Do List =
